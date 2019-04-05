@@ -21,10 +21,6 @@ Image processing script used to convert 32bpp RGBA PNG images into 8 bpp Indexed
       7. Parameters & usage
       8. Colour list
   Other Notes
-  
---------------------------------------------------------------------------------
-This page is a copy of https://dev.openttdcoop.org/projects/brix/wiki/Rgba-eater
---------------------------------------------------------------------------------
 
 --Introduction--
 
