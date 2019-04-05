@@ -1,11 +1,7 @@
 # RGBA-Eater
 Image processing script used to convert 32bpp RGBA PNG images into 8 bpp Indexed PNG images used in OpenTTD.
 
---------------------------------------------------------------------------------
-                            R G B A    E A T E R   v1
---------------------------------------------------------------------------------
-
-  Readme Contents:
+-- Readme Contents: --
   
   Introduction
   Downloads:
@@ -22,13 +18,9 @@ Image processing script used to convert 32bpp RGBA PNG images into 8 bpp Indexed
       8. Colour list
   Other Notes
 
---Introduction--
+-- Introduction --
 
 The palette converter is a 32bpp RGBA to 8bpp index colour converter. It is written in python 3.6.2 and requires Pillow to run. Originally it was written for BRIX but it is aimed for easy (but controllable) use so it can be used with any other project. You can find the files in BRIX repository, or download a complete .zip here:
-
--- Downloads --
-
-version 1: https://dev.openttdcoop.org/attachments/download/8712/RGBA-EATER_v1.zip
 
 -- Requirements --
 
