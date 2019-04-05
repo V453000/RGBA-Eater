@@ -8,14 +8,23 @@ Image processing script used to convert 32bpp RGBA PNG images into 8 bpp Indexed
       Requirements
   Licensing & credits
   Main Features
+  
       1. Conversion
+      
       2. Allowing/Disallowing specific colours
+      
       3. Alpha handling
+      
       4. Color offsets for semi-transparent pixels
+      
       5. Multithreading
+      
       6. Optimizing by usage
+      
       7. Parameters & usage
+      
       8. Colour list
+      
   Other Notes
 
 -- Introduction --
@@ -25,6 +34,7 @@ The palette converter is a 32bpp RGBA to 8bpp index colour converter. It is writ
 -- Requirements --
 
 - Python 3.6.2 or greater (untested with earlier versions)
+
 - Pillow
 
 -- Licensing & credits --
@@ -41,15 +51,21 @@ Obviously the main feature is being able to automatically convert any amount of 
 -- 2. Allowing/Disallowing specific colours --
 
 Sometimes you convert your 32bpp image to 8bpp and some of the colours get in the way and you don't want them there. With this palette converter you can control it:
+
 - enable colours by type (see colour list below)
+
 - disable colours by type (see colour list below)
+
 - enable colours by index (see palette)
+
 - enable colours by index (see palette)
+
 
 -- 3. Alpha handling --
 
 What happens to anti-aliased edges during Photoshop conversion seems to be rather random and far from controllable. First of the problems is that whenever a pixel has some transparency, Photoshop mixes the pixel colour with some background colour you choose. You can choose the backgound, but it's still usually not what you want.
 Instead, palette converter takes the pure colour and converts that to the closest index as if it was any other pixel without transparency.
+
 Palette converter adds parameters to control thresholds what happens to the alpha. There is one main parameter alpha_ignore which just makes a transparent enough pixel be completely ignored.
 
 -- 4. Color offsets for semi-transparent pixels --
@@ -61,6 +77,7 @@ The exact formula for the offsets is manually written because the palette has ma
 -- 5. Multithreading --
 
 Since 32bpp is often accompanied by extra zoom, you can easily get into really high amount of pixels to process. There are fundamentally different many ways how to make the converter faster. For now this is the first version and I wanted to start with some simple core of it, so it uses Pillow's Image.getpixel and Image.putpixel which I was told are both pretty damn slow. I could use some other python module which might be faster or to make it super fast I could rewrite this into PyCUDA or some shader like GLS. For now I really don't feel like rewriting the whole thing and multithreading already improved the performance significantly.
+
 The default thread count is 16. You can change it with a parameter (see parameter list) if you have less threads, but it won't make a big difference in that case. If you have more threads, it should obviously help even more.
 Because of multithreading there is a temp folder in output which stores strips of pictures that each thread processed. You can remove them after the script is done if you like, but they are already in 8bpp so they are rather small.
 
@@ -70,6 +87,7 @@ The multithreading still isn't perfect and some parts of the code are ran on eve
 
 The basic idea of the converter is that it first loads the palette index RGB values and stores them in some list. Then it goes through the 32bpp image pixel by pixel and compares the RGB value of that pixel to all palette values in the list.
 This means that the less index colours we filter through, that much faster the converter is going to work. If you are having problems with performance, you can drastically improve it by disabling all colours by parameters and then enabling just the ones you want.
+
 Similarly with alpha, if you throw away all pixels with any transparency, there will obviously be less processing need to be done.
 You can make the script run much faster but often times you will probably just want to let it run and do things properly, at least on the first run before you realize which colours you want etc.
 
