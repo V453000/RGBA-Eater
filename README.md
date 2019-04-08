@@ -1,6 +1,8 @@
 # RGBA-Eater
 Image processing script used to convert 32bpp RGBA PNG images into 8 bpp Indexed PNG images used in OpenTTD.
 
+The default used palette is TTD-DOS. It is possible but not recommended to change it by replacing the palette images in the folder `x-script-output/`
+
 This page is trying to be a comprehensive step by step tutorial and a complete documentation of the RGBA-Eater script. It aims to show how to install and use it.
 
 # Installation (on Windows)
@@ -17,8 +19,8 @@ The script can be used in many interesting ways, but out of the box
 
 ### Example.bat
 * The converter can be launched from a command line, but it can be convenient to start with double-clicking the `example.bat` to run it.
-* `-n` The path to the input 32bpp RGB image to process from the `/32bpp` sub-folder. This parameter is mandatory.
-* The outputs will automatically be placed into the `/8bpp` sub-folder with the same relative path as the input. The resulting 8bpp image will get `-8bpp` added to the filename.
+* `-n` The path to the input 32bpp RGB image to process from the `32bpp/` sub-folder. This parameter is mandatory.
+* The outputs will automatically be placed into the `8bpp/` sub-folder with the same relative path as the input. The resulting 8bpp image will get `-8bpp` added to the filename.
 * `-e` parameter sets which colour types to be used in the 8bpp output. The default `example-command.bat` uses `ALL`. This means all colours in the palette except company colours (CC1 and CC2) and animated colours.
 
 # All parameters
@@ -42,8 +44,8 @@ RGBA-Eater can be customized a lot, but it also means there are many parameters 
 * `-k` **--probability_alpha** - Less opaque pixels are ignored with a probability based on their transparency. Useful for 32bpp transparency gradients like shadows.
 
 * `-t` **--thread_count** - Sets the amount of threads the converter can run on. With large images it can take a long time to process, so using multiple threads is useful then. By default it is currently `16`
-* `-x` **--auto_clean_temp** - Results of individual threads are placed in `/x-script-temp` folder. Using `-x` makes the RGBA-Eater automatically remove these images after the conversion is finished, the final image combined and saved to `/8bpp`
-* `-z` **--individual_temp** - In some cases it can be interesting if the temp folder uses more unique file names based on the input file namme. Using `-z` enables that.
+* `-x` **--auto_clean_temp** - Results of individual threads are placed in `x-script-temp/` folder. Using `-x` makes the RGBA-Eater automatically remove these images after the conversion is finished, the final image combined and saved to `8bpp/`
+* `-z` **--individual_temp** - In some cases it can be interesting if the temp folder uses more unique file names based on the input file name. Using `-z` enables that.
 
 * `-r` **--red_weight** - You can customize how much of each colour channel influences the result. The default value is `1`.
 * `-g` **--green_weight** - You can customize how much of each colour channel influences the result. The default value is `1`.
