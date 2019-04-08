@@ -57,7 +57,7 @@ There are many colour types that you can use in `-e` or `-f` parameters.
 * `ALPHA_BLUE` - index 0, I don't expect this to be used often as that's already the result of transparency
 * `ALL` - indexes 1-79, 88-196, 205-214 - all "normal" colours - no action colours, no company colours, no pure white (index 255) and no useless colours like pure alpha pink
 * `GRAYSCALE` - indexes 1-15
-*. `METAL` - indexes 16-23 - more bluey/metallic gray
+* `METAL` - indexes 16-23 - more bluey/metallic gray
 * `LIME_GREEN` - indexes 24-31
 * `BEIGE` - indexes 32-39
 * `DARK_PINK` - indexes 40-47
