@@ -597,6 +597,9 @@ def run():
   # define thread count
   thread_count = options['thread_count']
 
+  while options['input_name'][-4:] == '.png' or options['input_name'][-4:] == '.PNG':
+    options['input_name'] = options['input_name'][:-4]
+
   # define what should the queue for rgb2palette include
   job_list = [  
       [
