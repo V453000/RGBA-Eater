@@ -1,1 +1,1 @@
-RGBA-Eater.py -n example.png -e EVERYTHING
+RGBA-Eater.py -n example.png -e ALL
