@@ -80,7 +80,7 @@ There are many colour types that you can use in `-e` or `-f` parameters.
 * `RED_2` - indexes 185-191 - split red ranges since the differences are quite big from red to yellow
 * `ORANGE` - indexes 192-197
 * `CC1` - indexes 198-205 - company colour 1 (the blue one)
-* `GREEN` - indexes 206-209
+* `GREEN` - indexes 206-209 - the few bright green colours
 * `CYAN` - indexes 210-214
 * `ALPHA_PINK` - index 215 - I don't see any reason to add other pure pink indexes, the converter would use just one anyway
 * `COLA` - indexes 227-231 action colours of cola (oil refinery in TTD graphics)
