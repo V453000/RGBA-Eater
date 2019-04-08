@@ -58,7 +58,7 @@ RGBA-Eater can be customized a lot, but it also means there are many parameters 
 
 There are many colour types that you can use in `-e` or `-f` parameters.
 
-* `EVERYTHING` - every single colour index, including the weird ones you probably don't want
+* `EVERYTHING` - indexes 0-215, 227-255, ignoring only 216-226 which are duplicates of pink alpha index 215. Includes action colours like fire or water cycles!
 * `ALPHA_BLUE` - index 0, I don't expect this to be used often as that's already the result of transparency
 * `ALL` - indexes 1-79, 88-196, 205-214 - all "normal" colours - no action colours, no company colours, no pure white (index 255) and no useless colours like pure alpha pink
 * `GRAYSCALE` - indexes 1-15
