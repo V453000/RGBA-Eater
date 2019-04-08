@@ -7,9 +7,9 @@ This page is trying to be a comprehensive step by step tutorial and a complete d
 
 # Installation (on Windows)
 
-1. Python v3 is required. You can obtain it at https://www.python.org/downloads/
-2. I believe Python needs to be added to System environment variables (you can select this option when installing Python, I think by default it is off)
-3. Pillow (a Python module) is required. This should be possible to do by opening the Windows command line and writing a command `pip install pillow`
+1. **Python v3** is required. You can obtain it at https://www.python.org/downloads/
+2. I believe Python needs to be added to **System environment variables** (you can select this option when installing Python, I think by default it is off)
+3. **Pillow** (a Python module) is required. This should be possible to do by opening the Windows command line and writing a command `pip install pillow`
 
 The RGBA Eater only needs to be unzipped or checked out into a folder of your choice.
 
@@ -18,9 +18,10 @@ The RGBA Eater only needs to be unzipped or checked out into a folder of your ch
 The script can be used in many interesting ways, but out of the box 
 
 ### Example.bat
+* Put the 32bpp RGB image in `32bpp/` folder.
 * The converter can be launched from a command line, but it can be convenient to start with double-clicking the `example.bat` to run it.
-* `-n` The path to the input 32bpp RGB image to process from the `32bpp/` sub-folder. This parameter is mandatory.
-* The outputs will automatically be placed into the `8bpp/` sub-folder with the same relative path as the input. The resulting 8bpp image will get `-8bpp` added to the filename.
+* `-n` The path to the input 32bpp RGB image to process from the `32bpp/` folder. This parameter is mandatory.
+* The outputs will automatically be placed into the `8bpp/` folder with the same relative path as the input. The resulting 8bpp image will get `-8bpp` added to the filename.
 * `-e` parameter sets which colour types to be used in the 8bpp output. The default `example-command.bat` uses `ALL`. This means all colours in the palette except company colours (CC1 and CC2) and animated colours.
 
 # All parameters
