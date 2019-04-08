@@ -380,7 +380,10 @@ def rgb2palette(args):
       pixRed = pix[0]
       pixGreen = pix[1]
       pixBlue = pix[2]
-      pixAlpha = pix[3]
+      if len(pix) > 3:
+        pixAlpha = pix[3]
+      else:
+        pixAlpha = 255
 
       # check Alpha in pixel, and output alpha/color offset
       if pixAlpha < alpha_ignore:
