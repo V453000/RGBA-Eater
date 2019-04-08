@@ -117,220 +117,228 @@ def rgb2palette(args):
   # create allowed colours list
   colours_to_filter = []
   for coltype in allowed_colour_types:
-    if coltype == 'ALL':
+    if coltype == 'ALPHA_BLUE' or 'EVERYTHING':
+      colours_to_filter.append(0)
+    if coltype == 'ALL' or coltype == 'EVERYTHING':
       for n in range(1, 80):
         colours_to_filter.append(n)
       for n in range(88, 197):
         colours_to_filter.append(n)
       for n in range(205, 215):
         colours_to_filter.append(n)
-    if coltype == 'GRAYSCALE':
+    if coltype == 'GRAYSCALE' or coltype == 'EVERYTHING':
       for n in range(1, 16):
         colours_to_filter.append(n)
-    if coltype == 'METAL': 
+    if coltype == 'METAL' or coltype == 'EVERYTHING': 
       for n in range(16, 24):
         colours_to_filter.append(n)
-    if coltype == 'LIME_GREEN': 
+    if coltype == 'LIME_GREEN' or coltype == 'EVERYTHING': 
       for n in range(24, 32):
         colours_to_filter.append(n)
-    if coltype == 'BEIGE': 
+    if coltype == 'BEIGE' or coltype == 'EVERYTHING': 
       for n in range(32, 40):
         colours_to_filter.append(n)
-    if coltype == 'DARK_PINK': 
+    if coltype == 'DARK_PINK' or coltype == 'EVERYTHING': 
       for n in range(40, 48):
         colours_to_filter.append(n)
-    if coltype == 'YELLOW': 
+    if coltype == 'YELLOW' or coltype == 'EVERYTHING': 
       for n in range(50, 53):
         colours_to_filter.append(n)
-    if coltype == 'DARK_BEIGE': 
+    if coltype == 'DARK_BEIGE' or coltype == 'EVERYTHING': 
       for n in range(53, 60):
         colours_to_filter.append(n)
-    if coltype == 'YELLOW': 
+    if coltype == 'YELLOW' or coltype == 'EVERYTHING': 
       for n in range(60, 70):
         colours_to_filter.append(n)
-    if coltype == 'BROWN_1': 
+    if coltype == 'BROWN_1' or coltype == 'EVERYTHING': 
       for n in range(70, 80):
         colours_to_filter.append(n)
-    if coltype == 'CC2': 
+    if coltype == 'CC2' or coltype == 'EVERYTHING': 
       for n in range(80, 88):
         colours_to_filter.append(n)
-    if coltype == 'DARK_GREEN': 
+    if coltype == 'DARK_GREEN' or coltype == 'EVERYTHING': 
       for n in range(88, 96):
         colours_to_filter.append(n)
-    if coltype == 'PALE_GREEN': 
+    if coltype == 'PALE_GREEN' or coltype == 'EVERYTHING': 
       for n in range(96, 104):
         colours_to_filter.append(n)
-    if coltype == 'BROWN_2': 
+    if coltype == 'BROWN_2' or coltype == 'EVERYTHING': 
       for n in range(104, 112):
         colours_to_filter.append(n)
-    if coltype == 'BROWN_3': 
+    if coltype == 'BROWN_3' or coltype == 'EVERYTHING': 
       for n in range(112, 122):
         colours_to_filter.append(n)
-    if coltype == 'BROWN_4': 
+    if coltype == 'BROWN_4' or coltype == 'EVERYTHING': 
       for n in range(122, 128):
         colours_to_filter.append(n)
-    if coltype == 'MAUVE': 
+    if coltype == 'MAUVE' or coltype == 'EVERYTHING': 
       for n in range(128, 136):
         colours_to_filter.append(n)
-    if coltype == 'PURPLE': 
+    if coltype == 'PURPLE' or coltype == 'EVERYTHING': 
       for n in range(136, 144):
         colours_to_filter.append(n)
-    if coltype == 'BLUE': 
+    if coltype == 'BLUE' or coltype == 'EVERYTHING': 
       for n in range(144, 154):
         colours_to_filter.append(n)
-    if coltype == 'LIGHT_BLUE': 
+    if coltype == 'LIGHT_BLUE' or coltype == 'EVERYTHING': 
       for n in range(154, 162):
         colours_to_filter.append(n)
-    if coltype == 'PINK': 
+    if coltype == 'PINK' or coltype == 'EVERYTHING': 
       for n in range(162, 170):
         colours_to_filter.append(n)
-    if coltype == 'LIGHT_PURPLE': 
+    if coltype == 'LIGHT_PURPLE' or coltype == 'EVERYTHING': 
       for n in range(170, 178):
         colours_to_filter.append(n)
-    if coltype == 'RED_1': 
+    if coltype == 'RED_1' or coltype == 'EVERYTHING': 
       for n in range(178, 185):
         colours_to_filter.append(n)
-    if coltype == 'RED_2': 
+    if coltype == 'RED_2' or coltype == 'EVERYTHING': 
       for n in range(185, 192):
         colours_to_filter.append(n)
-    if coltype == 'ORANGE': 
+    if coltype == 'ORANGE' or coltype == 'EVERYTHING': 
       for n in range(192, 198):
         colours_to_filter.append(n)
-    if coltype == 'CC1': 
+    if coltype == 'CC1' or coltype == 'EVERYTHING': 
       for n in range(198, 206):
         colours_to_filter.append(n)
-    if coltype == 'GREEN': 
+    if coltype == 'GREEN' or coltype == 'EVERYTHING': 
       for n in range(206, 210):
         colours_to_filter.append(n)
-    if coltype =='CYAN':
+    if coltype =='CYAN' or coltype == 'EVERYTHING':
       for n in range(210, 215):
         colours_to_filter.append(n)
-    if coltype == 'COLA': 
+    if coltype =='ALPHA_PINK' or coltype == 'EVERYTHING':
+      colours_to_filter.append(215)
+    if coltype == 'COLA' or coltype == 'EVERYTHING': 
       for n in range(227, 232):
         colours_to_filter.append(n)
-    if coltype == 'FIRE': 
+    if coltype == 'FIRE' or coltype == 'EVERYTHING': 
       for n in range(232, 239):
         colours_to_filter.append(n)
-    if coltype == 'LED_RED': 
+    if coltype == 'LED_RED' or coltype == 'EVERYTHING': 
       for n in range(239, 241):
         colours_to_filter.append(n)
-    if coltype == 'LED_YELLOW': 
+    if coltype == 'LED_YELLOW' or coltype == 'EVERYTHING': 
       for n in range(241, 245):
         colours_to_filter.append(n)
-    if coltype == 'WATER': 
+    if coltype == 'WATER' or coltype == 'EVERYTHING': 
       for n in range(245, 255):
         colours_to_filter.append(n)
-    if coltype == 'WHITE':
+    if coltype == 'WHITE' or coltype == 'EVERYTHING':
       for n in range(255, 256):
         colours_to_filter.append(n)
   
   # create disallowed colours list
   disallowed_colours = []
   for coltype in disallowed_colour_types:
-    if coltype == 'ALL':
+    if coltype == 'ALPHA_BLUE' or 'EVERYTHING':
+      disallowed_colours.append(0)
+    if coltype == 'ALL' or coltype == 'EVERYTHING':
       for n in range(1, 80):
         disallowed_colours.append(n)
       for n in range(88, 197):
         disallowed_colours.append(n)
       for n in range(205, 215):
         disallowed_colours.append(n)
-    if coltype == 'GRAYSCALE':
+    if coltype == 'GRAYSCALE' or coltype == 'EVERYTHING':
       for n in range(1, 16):
         disallowed_colours.append(n)
-    if coltype == 'METAL': 
+    if coltype == 'METAL' or coltype == 'EVERYTHING': 
       for n in range(16, 24):
         disallowed_colours.append(n)
-    if coltype == 'LIME_GREEN': 
+    if coltype == 'LIME_GREEN' or coltype == 'EVERYTHING': 
       for n in range(24, 32):
         disallowed_colours.append(n)
-    if coltype == 'BEIGE': 
+    if coltype == 'BEIGE' or coltype == 'EVERYTHING': 
       for n in range(32, 40):
         disallowed_colours.append(n)
-    if coltype == 'DARK_PINK': 
+    if coltype == 'DARK_PINK' or coltype == 'EVERYTHING': 
       for n in range(40, 48):
         disallowed_colours.append(n)
-    if coltype == 'YELLOW': 
+    if coltype == 'YELLOW' or coltype == 'EVERYTHING': 
       for n in range(50, 53):
         disallowed_colours.append(n)
-    if coltype == 'DARK_BEIGE': 
+    if coltype == 'DARK_BEIGE' or coltype == 'EVERYTHING': 
       for n in range(53, 60):
         disallowed_colours.append(n)
-    if coltype == 'YELLOW': 
+    if coltype == 'YELLOW' or coltype == 'EVERYTHING': 
       for n in range(60, 70):
         disallowed_colours.append(n)
-    if coltype == 'BROWN_1': 
+    if coltype == 'BROWN_1' or coltype == 'EVERYTHING': 
       for n in range(70, 80):
         disallowed_colours.append(n)
-    if coltype == 'CC2': 
+    if coltype == 'CC2' or coltype == 'EVERYTHING': 
       for n in range(80, 88):
         disallowed_colours.append(n)
-    if coltype == 'DARK_GREEN': 
+    if coltype == 'DARK_GREEN' or coltype == 'EVERYTHING': 
       for n in range(88, 96):
         disallowed_colours.append(n)
-    if coltype == 'PALE_GREEN': 
+    if coltype == 'PALE_GREEN' or coltype == 'EVERYTHING': 
       for n in range(96, 104):
         disallowed_colours.append(n)
-    if coltype == 'BROWN_2': 
+    if coltype == 'BROWN_2' or coltype == 'EVERYTHING': 
       for n in range(104, 112):
         disallowed_colours.append(n)
-    if coltype == 'BROWN_3': 
+    if coltype == 'BROWN_3' or coltype == 'EVERYTHING': 
       for n in range(112, 122):
         disallowed_colours.append(n)
-    if coltype == 'BROWN_4': 
+    if coltype == 'BROWN_4' or coltype == 'EVERYTHING': 
       for n in range(122, 128):
         disallowed_colours.append(n)
-    if coltype == 'MAUVE': 
+    if coltype == 'MAUVE' or coltype == 'EVERYTHING': 
       for n in range(128, 136):
         disallowed_colours.append(n)
-    if coltype == 'PURPLE': 
+    if coltype == 'PURPLE' or coltype == 'EVERYTHING': 
       for n in range(136, 144):
         disallowed_colours.append(n)
-    if coltype == 'BLUE': 
+    if coltype == 'BLUE' or coltype == 'EVERYTHING': 
       for n in range(144, 154):
         disallowed_colours.append(n)
-    if coltype == 'LIGHT_BLUE': 
+    if coltype == 'LIGHT_BLUE' or coltype == 'EVERYTHING': 
       for n in range(154, 162):
         disallowed_colours.append(n)
-    if coltype == 'PINK': 
+    if coltype == 'PINK' or coltype == 'EVERYTHING': 
       for n in range(162, 170):
         disallowed_colours.append(n)
-    if coltype == 'LIGHT_PURPLE': 
+    if coltype == 'LIGHT_PURPLE' or coltype == 'EVERYTHING': 
       for n in range(170, 178):
         disallowed_colours.append(n)
-    if coltype == 'RED_1': 
+    if coltype == 'RED_1' or coltype == 'EVERYTHING': 
       for n in range(178, 185):
         disallowed_colours.append(n)
-    if coltype == 'RED_2': 
+    if coltype == 'RED_2' or coltype == 'EVERYTHING': 
       for n in range(185, 192):
         disallowed_colours.append(n)
-    if coltype == 'ORANGE': 
+    if coltype == 'ORANGE' or coltype == 'EVERYTHING': 
       for n in range(192, 198):
         disallowed_colours.append(n)
-    if coltype == 'CC1': 
+    if coltype == 'CC1' or coltype == 'EVERYTHING': 
       for n in range(198, 206):
         disallowed_colours.append(n)
-    if coltype == 'GREEN': 
+    if coltype == 'GREEN' or coltype == 'EVERYTHING': 
       for n in range(206, 210):
         disallowed_colours.append(n)
-    if coltype =='CYAN':
+    if coltype =='CYAN' or coltype == 'EVERYTHING':
       for n in range(210, 215):
         disallowed_colours.append(n)
-    if coltype == 'COLA': 
+    if coltype =='ALPHA_PINK' or coltype == 'EVERYTHING':
+      disallowed_colours.append(215)
+    if coltype == 'COLA' or coltype == 'EVERYTHING': 
       for n in range(227, 232):
         disallowed_colours.append(n)
-    if coltype == 'FIRE': 
+    if coltype == 'FIRE' or coltype == 'EVERYTHING': 
       for n in range(232, 239):
         disallowed_colours.append(n)
-    if coltype == 'LED_RED': 
+    if coltype == 'LED_RED' or coltype == 'EVERYTHING': 
       for n in range(239, 241):
         disallowed_colours.append(n)
-    if coltype == 'LED_YELLOW': 
+    if coltype == 'LED_YELLOW' or coltype == 'EVERYTHING': 
       for n in range(241, 245):
         disallowed_colours.append(n)
-    if coltype == 'WATER': 
+    if coltype == 'WATER' or coltype == 'EVERYTHING': 
       for n in range(245, 255):
         disallowed_colours.append(n)
-    if coltype == 'WHITE':
+    if coltype == 'WHITE' or coltype == 'EVERYTHING':
       for n in range(255, 256):
         disallowed_colours.append(n)
 
@@ -1058,7 +1066,7 @@ if __name__ == '__main__':
   # defaults for parameters
   default_values = [
       ('thread_count',              16),
-      ('allowed_colour_types',      ['ALL']),
+      ('allowed_colour_types',      ['NONE']),
       ('disallowed_colour_types',   []),
       ('allowed_colour_indexes',    []),
       ('disallowed_colour_indexes', []),
