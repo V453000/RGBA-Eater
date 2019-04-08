@@ -1,6 +1,5 @@
 # RGBA-Eater
 Image processing script used to convert 32bpp RGBA PNG images into 8 bpp Indexed PNG images used in OpenTTD.
-# Welcome to the RGBA-Eater wiki!
 
 This page is trying to be a comprehensive step by step tutorial and a complete documentation of the RGBA-Eater script. It aims to show how to install and use it.
 
