@@ -53,40 +53,39 @@ RGBA-Eater can be customized a lot, but it also means there are many parameters 
 
 There are many colour types that you can use in `-e` or `-f` parameters.
 
-
-
 * `EVERYTHING` - every single colour index, including the weird ones you probably don't want
 * `ALPHA_BLUE` - index 0, I don't expect this to be used often as that's already the result of transparency
-* `ALL` - all "normal" colours - no action colours, no company colours, no pure white (index 255) and no useless colours like pure alpha pink
-* `GRAYSCALE `- 15 shades of grayscale
-*. `METAL `- more bluey/metallic gray
-* `LIME_GREEN`
-* `BEIGE`
-* `DARK_PINK`
-* `YELLOW` - yellow colours, including the 3 separate indexes 50, 51, 52
-* `DARK_BEIGE`
-* `YELLOW`
-* `BROWN_1`
-* `CC2` - company colour 2 (the green one)
-* `DARK_GREEN`
-* `PALE_GREEN`
-* `BROWN_2`
-* `BROWN_3`
-* `BROWN_4`
-* `MAUVE`
-* `PURPLE`
-* `BLUE`
-* `LIGHT_BLUE`
-* `PINK`
-* `LIGHT_PURPLE`
-* `RED_1` - split red ranges since the differences are quite big from red to yellow
-* `RED_2` - split red ranges since the differences are quite big from red to yellow
-* `ORANGE`
-* `CC1` - company colour 1 (the blue one)
-* `GREEN`
-* `COLA` - action colours of cola (oil refinery in TTD graphics)
-* `FIRE` - action colours of fire (fizzy drink factory in TTD graphics)
-* `LED_RED` - action colours of red blinking light (from transmitters in TTD graphics)
-* `LED_YELLOW` - action colours of yellow blinking light (from lighthouses in TTD graphics)
-* `WATER` - action colours of water (water tiles in  TTD graphics)
-* `WHITE` - pure white is usually useless and will give you errors when compiling from NML
+* `ALL` - indexes 1-79, 88-196, 205-214 - all "normal" colours - no action colours, no company colours, no pure white (index 255) and no useless colours like pure alpha pink
+* `GRAYSCALE` - indexes 1-15
+*. `METAL` - indexes 16-23 - more bluey/metallic gray
+* `LIME_GREEN` - indexes 24-31
+* `BEIGE` - indexes 32-39
+* `DARK_PINK` - indexes 40-47
+* `YELLOW` - indexes 50-52 and 60-69 - yellow colours, including the 3 separate indexes 50-52
+* `DARK_BEIGE` - indexes 53-59
+* `BROWN_1`- indexes 70-79
+* `CC2` - indexes 80-87 - company colour 2 (the green one)
+* `DARK_GREEN` - indexes 88-95
+* `PALE_GREEN` - indexes 96-103
+* `BROWN_2` - indexes 104-111
+* `BROWN_3` - indexes 112-121
+* `BROWN_4` - indexes 122-127
+* `MAUVE` - indexes 128-135
+* `PURPLE` - indexes 136-143
+* `BLUE` - indexes 144-153
+* `LIGHT_BLUE` - indexes 154-161
+* `PINK` - indexes 162-169
+* `LIGHT_PURPLE` - indexes 170-177
+* `RED_1` - indexes 178-184 - split red ranges since the differences are quite big from red to yellow
+* `RED_2` - indexes 185-191 - split red ranges since the differences are quite big from red to yellow
+* `ORANGE` - indexes 192-197
+* `CC1` - indexes 198-205 - company colour 1 (the blue one)
+* `GREEN` - indexes 206-209
+* `CYAN` - indexes 210-214
+* `ALPHA_PINK` - index 215 - I don't see any reason to add other pure pink indexes, the converter would use just one anyway
+* `COLA` - indexes 227-231 action colours of cola (oil refinery in TTD graphics)
+* `FIRE` - indexes 232-238 action colours of fire (fizzy drink factory in TTD graphics)
+* `LED_RED` - indexes 239-240 - action colours of red blinking light (from transmitters in TTD graphics)
+* `LED_YELLOW` - indexes 241-244 - action colours of yellow blinking light (from lighthouses in TTD graphics)
+* `WATER` - indexes 245-254 - action colours of water (water tiles in  TTD graphics)
+* `WHITE` - index 255 - pure white is usually useless and will give you errors when compiling from NML
