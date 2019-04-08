@@ -17,13 +17,15 @@ The script can be used in many interesting ways, but out of the box
 
 ### Example.bat
 * The converter can be launched from a command line, but it can be convenient to start with double-clicking the `example.bat` to run it.
-* `-n` parameter is mandatory sets the 32bpp input image filename. The `/32bpp` sub-folder is currently mandatory.
-* The outputs will automatically be placed into the `/8bpp` sub-folder.
+* `-n` The path to the input 32bpp RGB image to process from the `/32bpp` sub-folder. This parameter is mandatory.
+* The outputs will automatically be placed into the `/8bpp` sub-folder with the same relative path as the input. The resulting 8bpp image will get `-8bpp` added to the filename.
 * `-e` parameter sets which colour types to be used in the 8bpp output. The default `example-command.bat` uses `ALL`. This means all colours in the palette except company colours (CC1 and CC2) and animated colours.
 
 # All parameters
 
 RGBA-Eater can be customized a lot, but it also means there are many parameters to describe. They ones I consider the most useful are at the top of the following list.
+
+* `-n` **--input_name** - The path to the input 32bpp RGB image to process. The `/32bpp` at the beginning should not be included and `.png` can be omitted. This parameter is mandatory.
 
 * `-e` **--allowed_colour_types** - Set which colour types can show in the 8bpp output. Colour types are sets of colours using names I gave them. You can find the full list of possible names down below.
 * `-f` **--allowed_colour_types** - Set which colour types can't show in the 8bpp output. Sometimes it can be convenient to allow ALL colour types and then subtract a few by this parameter.
