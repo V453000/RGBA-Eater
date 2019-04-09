@@ -23,6 +23,7 @@ The script can be used in many interesting ways, but out of the box
 * `-n` The path to the input 32bpp RGB image to process from the `32bpp/` folder. This parameter is mandatory.
 * The outputs will automatically be placed into the `8bpp/` folder with the same relative path as the input. The resulting 8bpp image will get `-8bpp` added to the filename.
 * `-e` parameter sets which colour types to be used in the 8bpp output. The default `example-command.bat` uses `ALL`. This means all colours in the palette except company colours (CC1 and CC2) and animated colours.
+* parameters like `-e`, `-f`, `-i`, `-y` can accept multiple inputs, for example `-e ALL CC1 CC2 -i 225` will enable ALL, CC1 and CC2 colour types and add index 225.
 
 # All parameters
 
@@ -94,3 +95,29 @@ There are many colour types that you can use in `-e` or `-f` parameters.
 * `LED_YELLOW` - indexes 241-244 - action colours of yellow blinking light (from lighthouses in TTD graphics)
 * `WATER` - indexes 245-254 - action colours of water (water tiles in  TTD graphics)
 * `WHITE` - index 255 - pure white is usually useless and will give you errors when compiling from NML
+
+# Tips
+
+It's possible to optimize the performance of the script a bit further by using it more efficiently, but it is useful to get a rough understanding what it does.
+
+### How it works
+
+1. Palette image indexes and RGB values are loaded from files in the `x-script-input/`.
+2. A list of all possible outcome indexes is created based on settings (`-e`, `-f`, `-i`, `-y`)
+3. The input image is opened and its width is read. The image is split into vertical slices based on the number of `-t` allowed threads to run. Each vertical slice is processed on a single thread then.
+4. The script iterates through all pixels of the input image.
+5. It reads the alpha (transparency) and decides whether the pixel is to be kept or thrown away (based on `-a` threshold, same with `-j` or `-k`).
+6. If the pixel is to be thrown away, it skips to the next pixel.
+7. If the pixel is to be kept, the colour comparer is started.
+8. The colour comparer calculates the colour difference between the input pixel and all possible outcome indexes from step 3.
+9. The colour comparison is
+9. The index with the smallest difference from the list is declared winner.
+10. Pixel is written in a virtual representation of the vertical output image slice.
+11. Output image slice is saved to `x-script-temp/`
+12. When all slices are finished, a final output is combined and put into `8bpp/`
+
+### More efficient use
+
+The slow part of the process is the colour comparer as it does a lot of comparisons (up to 246 per pixel). However, the less colour indexes are allowed to be compared to, the faster the script is.
+
+If you know you only want a set of specific colours or you know you don't need some, you can disable them and get your results a bit faster. In general I just use `-e ALL`, and sometimes add `CC1` and/or `CC2` in case I need it. Keeping all the normal indexes can be helpful to get more accurate representation of the input 32bpp colours.
